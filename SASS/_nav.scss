@@ -1,0 +1,149 @@
+#menu-bar{
+    position: fixed;
+    top: 40px;
+    right: 7%;
+    #menu{
+        width: 60px;
+        height: 45px;
+        margin: 30px 0 20px 20px;
+        cursor: pointer;
+        .bar{
+            height: 10px;
+            width: 100%;
+            background-color: $amarilloBordes;
+            display: block;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        #bar2{
+            margin: 5px 0;
+        }
+        #bar1{
+            transform: translateY(-4px);
+        }
+        #bar3{
+            transform: translateY(4px);
+        }
+    }
+}
+#menu-bar{
+    .change .bar{
+        background-color: $amarilloBordes;
+    }
+    .change #bar1{
+        transform: translateY(4px) rotateZ(-45deg);
+    }
+    .change #bar3{
+        transform: translateY(-6px) rotateZ(-45deg);
+    }
+}
+#menu-bar{
+    position: fixed;
+    top: 40px;
+    right: 7%;
+    .change{
+        width: 60px;
+        height: 45px;
+        margin: 30px 0 20px 20px;
+        cursor: pointer;
+        .bar{
+            height: 10px;
+            width: 100%;
+            background-color: $colorNegro;
+            display: block;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        #bar2{
+            opacity: 0;
+        }
+        #bar1{
+            transform: translateY(9px) rotateZ(-45deg);
+        }
+        #bar3{
+            transform: translateY(-11px) rotateZ(45deg);
+        }
+    }
+}
+.nav li a{
+    font-size: 30px;
+    color: $colorNegro;
+    text-decoration: none;
+    
+}
+.nav li{
+    list-style: none;
+    padding: 16px 0;
+}
+.nav{
+    padding: 0;
+    transition: 0.3s ease;
+    display: none;
+}
+.nav li a:hover{
+    font-weight: bold;
+}
+.change{
+    display: block;
+}
+.menu-bg{
+    z-index: 1;
+    width: 0;
+    height: 0;
+    margin: 30px 0 20px 20px;
+   // background: radial-gradient(circle,#e94498,#b81568);
+    background: radial-gradient(circle,$amarilloBordes,$amarilloFondo);
+    transition: 0.3s ease;
+    border-radius: 50%;
+
+}
+#menu-bar{
+    z-index: 2;
+    margin-right: 7%;
+    margin-top: 40px;
+}
+.change-bg{
+    width: 650px;
+    height: 780px;
+    transform: translate(60%, -30%);
+}
+#menu-bg, #menu-bar{
+    top: 0;
+    right: 0;
+    position: absolute;
+}
+
+@media only screen and (max-width: 1000px) {
+    .change-bg{
+        width: 500px;
+    } 
+    .nav li{
+        list-style: none;
+        padding: 16px 0;
+        a{
+            font-size: 24px;
+            color: $colorNegro;
+            text-decoration: none;
+        }
+    }
+    #menu-bar{
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 0px;
+        width: 50px;
+        height: 70px;
+        #menu, #nada{
+            width: 40px;
+        }
+    }
+}
+@media only screen and (max-width: 670px) {
+    .change-bg{
+        width: 450px;
+        height: 680px;
+    }   
+    #menu-bar{
+        right: 10px;
+        top: -10px;
+    }
+}

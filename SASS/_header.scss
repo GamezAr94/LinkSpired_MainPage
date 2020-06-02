@@ -1,0 +1,210 @@
+header{
+    @include contenedorSize(100%,180px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($color: #000000, $alpha: .8);
+    z-index: 2000;
+    .logo{
+        @include contenedorSize(430px,95px,flex);
+        justify-content: center;
+        align-items: flex-end;
+        padding-top: 10px;
+        cursor: pointer;
+        #iluminacion{
+           position: absolute;
+            transform: translate(-32px,-31px);
+            @include contenedorSize(60px,63px);
+            border-radius: 50%;
+            z-index: 2;
+            background-color: $amarilloBordes;
+            opacity: 0;
+            transition: .3s;
+            animation: opacity_out 1.3s ease 2s;
+            box-shadow: 0px 0px 49px 17px $amarilloBordes;
+            div{
+                background-color: $amarilloBordes;
+                position: absolute;
+                top: 56px;
+                left: 18px;
+                @include contenedorSize(23px, 13px);
+            }
+        }
+        #iluminacion:hover{
+            opacity: 1;
+            transition: .1s;
+        }
+        h1{
+            @include contenedorSize(405px,100px,flex);
+            color: $colorBlanco;
+            font-size: 70px;
+            padding: 0px;
+            justify-content: space-between;
+            align-items: flex-end;
+            span{
+                padding: 0px;
+                height: 63px;
+            }
+            #Link{
+                opacity: 0;
+                font-weight: 100;
+                animation: opacity_in 1.3s;
+                animation-delay: .5s;
+                animation-fill-mode: forwards;
+            }
+            #Spired{
+                opacity: 0;
+                animation: opacity_in 1.3s;
+                animation-delay: .8s;
+                animation-fill-mode: forwards;
+            }
+            .icono{
+                background-image: url(../IMG/Logo_LinkSpired.png);
+                background-position: center;
+                background-size: cover;
+                width: 65px;
+                height: 100%;
+                opacity: 0;
+                font-weight: 100;
+                animation: opacity_in 1.3s;
+                animation-delay: 1.1s;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+    .logoFooter{
+        @include contenedorSize(295px,55px,flex);
+        align-items: flex-end;
+        h2{
+            font-weight: 100;
+            color: $colorBlanco;
+            @include contenedorSize(350px, 30px);
+            opacity: 0;
+            font-weight: 100;
+            animation: opacity_in 1.3s;
+            animation-delay: 1.2s;
+            animation-fill-mode: forwards;
+        }
+    }
+    #brackeys{
+        position: absolute;
+        left: 50%;
+        top: 32px;
+        .left, .right{
+            position: absolute;
+            font-size: 70px;
+            color:$colorBlanco;
+        }
+        .left{
+            right: 206px;
+            animation: brackeysMove_left 1.7s;
+        }
+        .right{
+            left: 206px;
+            animation: brackeysMove_right 1.7s;
+        }
+    }
+}
+@keyframes brackeysMove_left{
+    from{
+        right: 0px;
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        right: 180;
+    }
+    to{
+        right: 206;
+    }
+}
+@keyframes brackeysMove_right{
+    from{
+        left: 0px;
+        opacity: 0;
+    }
+    10%{
+        opacity: 1;
+    }
+    90%{
+        left: 180;
+    }
+    to{
+        left: 206;
+    }
+}
+@keyframes opacity_in{
+    from{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes opacity_out{
+    from{
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    
+}
+@media only screen and (max-width: 670px) {
+    header{
+        height: 140px!important;
+        .logo{
+            width: 300px!important;
+            margin: 0 36px!important;
+            #iluminacion{
+                display: none;
+            }
+            h1{
+                width: 300px!important;
+                font-size: 50px!important;
+            }
+            .icono{
+                margin-bottom: 15px !important;
+                height: 75px!important;
+                width: 50px!important;
+            }
+        }
+        .logoFooter{
+            margin: 0 0 0 35px;
+            height: 30px;
+            h2{
+                font-size: 20px;
+                width: 250px;
+            }
+        }
+        #brackeys{
+            left: 185px;
+            top: 34px;
+            .left, .right{
+                font-size: 50px!important;
+            }
+            .left{
+                right:150px!important;
+            }
+            .right{
+                left: 150px!important;
+            }
+        }
+    } 
+}

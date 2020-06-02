@@ -1,0 +1,18 @@
+@mixin contenedorSize($ancho:100px,$alto:100px, $display:block) {
+    margin:0px auto;
+    width: $ancho;
+    height: $alto;
+    display: $display;
+}
+@mixin borderPosition($color:black){
+    border: 1px solid $color;
+}
+@mixin imagenSobrepuesta($imagen){
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: $imagen;
+}
