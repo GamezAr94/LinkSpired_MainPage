@@ -123,16 +123,12 @@
     #contenedorTitulo{
         height: 90px;
         #iluminacion{
-            background-color: #fff;
-            width: 40px;
-            height: 41px;
-            left: 48.5%;
-            top: 41px;
+            transform: translate(-23.5px,-23px);
+            @include contenedorSize(40px,43px);
             div{
-                background-color: #fff;
                 width: 17.5px;
                 height: 13px;
-                margin: -21px 0px 0px -6px;
+                margin: -21px 0px 0px -6.93px;
             }
         }
         .logo{
@@ -194,7 +190,16 @@
         justify-content: flex-start;
         width: 300px;
         margin-left: 25px;
-            height: 65px;
+        height: 65px;
+        #iluminacion{
+            transform: translate(82px,-17px);
+            @include contenedorSize(28px,30px);
+            div{
+                width: 12px;
+                height: 7px;
+                margin: -29px 0px 0px -9px;
+            }
+        }
             h1{
                 height:50px;
                 width: 230px;
@@ -294,44 +299,5 @@
     
 }
 @media only screen and (max-width: 670px) {
-    header{
-        //height: 90px;
-        .logo{
-            width: 300px;
-            margin: 0 36px;
-            #iluminacion{
-                display: none;
-            }
-            h1{
-                width: 300px;
-                font-size: 50px;
-            }
-            .icono{
-                margin-bottom: 15px ;
-                height: 75px;
-                width: 50px;
-            }
-        }
-        .logoFooter{
-            margin: 0 0 0 35px;
-            height: 30px;
-            h2{
-                font-size: 20px;
-                width: 250px;
-            }
-        }
-        #brackeys{
-            left: 185px;
-            top: 34px;
-            .left, .right{
-                font-size: 50px;
-            }
-            .left{
-                right:150px;
-            }
-            .right{
-                left: 150px;
-            }
-        }
-    } 
+    
 }
