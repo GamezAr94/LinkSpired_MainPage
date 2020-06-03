@@ -1,29 +1,38 @@
-header{
-    @include contenedorSize(100%,180px);
+#header{
+    width: 100%;
+    margin:0px auto;
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     background-color: rgba($color: #000000, $alpha: .8);
     z-index: 2000;
+    #contenedorTitulo{
+        margin-top: 5px;
+        margin-top: 5px;
+    }
     .logo{
         @include contenedorSize(430px,95px,flex);
         justify-content: center;
         align-items: flex-end;
-        padding-top: 10px;
         cursor: pointer;
+        transition: all 1s;
         #iluminacion{
+            background-color: #fff;
+            transition: all 1s;
            position: absolute;
             transform: translate(-32px,-31px);
             @include contenedorSize(60px,63px);
             border-radius: 50%;
             z-index: 2;
-            background-color: $amarilloBordes;
+            //background-color: $amarilloBordes;
             opacity: 0;
             transition: .3s;
             animation: opacity_out 1.3s ease 2s;
             box-shadow: 0px 0px 49px 17px $amarilloBordes;
             div{
-                background-color: $amarilloBordes;
+                background-color: #fff;
+                transition: all 1s;
+                //background-color: $amarilloBordes;
                 position: absolute;
                 top: 56px;
                 left: 18px;
@@ -31,21 +40,18 @@ header{
             }
         }
         #iluminacion:hover{
+            transition: all 1s;
             opacity: 1;
             transition: .1s;
         }
         h1{
+            transition: transform 1s;
             @include contenedorSize(405px,100px,flex);
             color: $colorBlanco;
-            font-size: 70px;
-            padding: 0px;
             justify-content: space-between;
             align-items: flex-end;
-            span{
-                padding: 0px;
-                height: 63px;
-            }
             #Link{
+                transition: transform 1s;
                 opacity: 0;
                 font-weight: 100;
                 animation: opacity_in 1.3s;
@@ -53,12 +59,14 @@ header{
                 animation-fill-mode: forwards;
             }
             #Spired{
+                transition: transform 1s;
                 opacity: 0;
                 animation: opacity_in 1.3s;
                 animation-delay: .8s;
                 animation-fill-mode: forwards;
             }
             .icono{
+                transition: transform 1s;
                 background-image: url(../IMG/Logo_LinkSpired.png);
                 background-position: center;
                 background-size: cover;
@@ -73,9 +81,11 @@ header{
         }
     }
     .logoFooter{
+        transition: all 1s;
         @include contenedorSize(295px,55px,flex);
         align-items: flex-end;
         h2{
+            transition: all 1s;
             font-weight: 100;
             color: $colorBlanco;
             @include contenedorSize(350px, 30px);
@@ -87,10 +97,12 @@ header{
         }
     }
     #brackeys{
+        transition: all 1s;
         position: absolute;
         left: 50%;
-        top: 32px;
+        top: 14px;
         .left, .right{
+            transition: all 1s;
             position: absolute;
             font-size: 70px;
             color:$colorBlanco;
@@ -102,6 +114,121 @@ header{
         .right{
             left: 206px;
             animation: brackeysMove_right 1.7s;
+        }
+    }
+}
+ .down{
+    height: 120px;
+    transition: all 1s;
+    #contenedorTitulo{
+        height: 90px;
+        #iluminacion{
+            background-color: #fff;
+            width: 40px;
+            height: 41px;
+            left: 48.5%;
+            top: 41px;
+            div{
+                background-color: #fff;
+                width: 17.5px;
+                height: 13px;
+                margin: -21px 0px 0px -6px;
+            }
+        }
+        .logo{
+            height: 70px;
+            h1{
+                width: 300px;
+                font-size: 50px;
+                height: 70px;
+                span{
+                    height: 43px;
+                }
+                .icono{
+                    width: 45px;
+                    height: 100%;
+                }
+            }
+        }
+        .logoFooter{
+            width: 300px;
+            text-align: center;
+            height: 50px;
+            h2{
+                font-size: 17px;
+            }
+        }
+        #brackeys{
+            position: absolute;
+            left: 50%;
+            top: 25px;
+            .left, .right{
+                font-size: 50px;
+            }
+            .left{
+                right: 150px;}
+            .right{
+                left: 150px;
+            }
+        }
+    }
+}
+ .up{
+    height: 180px;
+    transition: all 1s;
+    .logo{
+        h1{
+            font-size: 70px;
+            span{
+                height: 73px;
+            }
+        }
+    }
+}
+ .phone{
+    height: 100px;
+    transition: all 1s;
+    #contenedorTitulo{
+        height: 90px;
+        .logo{
+        justify-content: flex-start;
+        width: 300px;
+        margin-left: 25px;
+            height: 65px;
+            h1{
+                height:50px;
+                width: 230px;
+                font-size: 40px;
+                span{
+                    
+                    height: 40px;
+                }
+                .icono{
+                    width: 30px;
+                    height: 100%;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .logoFooter{
+            margin-left:70px;
+            height: 40px;
+            h2{
+                font-size: 14.5px;
+            }
+        }
+        #brackeys{
+            position: absolute;
+            left: 140px;
+            top: 28px;
+            .left, .right{
+                font-size: 40px;
+            }
+            .left{
+                right: 117px;}
+            .right{
+                left: 117px;
+            }
         }
     }
 }
@@ -168,21 +295,21 @@ header{
 }
 @media only screen and (max-width: 670px) {
     header{
-        height: 140px!important;
+        //height: 90px;
         .logo{
-            width: 300px!important;
-            margin: 0 36px!important;
+            width: 300px;
+            margin: 0 36px;
             #iluminacion{
                 display: none;
             }
             h1{
-                width: 300px!important;
-                font-size: 50px!important;
+                width: 300px;
+                font-size: 50px;
             }
             .icono{
-                margin-bottom: 15px !important;
-                height: 75px!important;
-                width: 50px!important;
+                margin-bottom: 15px ;
+                height: 75px;
+                width: 50px;
             }
         }
         .logoFooter{
@@ -197,13 +324,13 @@ header{
             left: 185px;
             top: 34px;
             .left, .right{
-                font-size: 50px!important;
+                font-size: 50px;
             }
             .left{
-                right:150px!important;
+                right:150px;
             }
             .right{
-                left: 150px!important;
+                left: 150px;
             }
         }
     } 
